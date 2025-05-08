@@ -2,10 +2,10 @@
 @use "bootstrap/scss/bootstrap" as *;
 
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 // Custom variables
-$font-family-base: 'Poppins', sans-serif;
+$font-family-base: 'Inter', sans-serif;
 
 
 // Custom styles
@@ -13,97 +13,83 @@ body {
     font-family: $font-family-base;
 }
 
-// Services section styles
-.card {
-    transition: transform 0.3s ease;
-    
-    &:hover {
-        transform: translateY(-10px);
-    }
-    
-    .bi {
-        font-size: 2rem;
-    }
-    
-    .bi-arrow-up-right {
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-    }
-    
-    &:hover .bi-arrow-up-right {
-        opacity: 1;
-    }
+.wrapper {
+    max-width: 1600px;
 }
 
-// Dark theme adjustments
-.bg-dark {
-    background: linear-gradient(45deg, #1a1a1a, #2c2c2c) !important;
-}
-
-// Statistics and Benefits section styles
-.statistics-card {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-    .progress {
-        height: 8px;
-        background-color: #f0f0f0;
-        
-        .progress-bar {
-            background-color: #28a745;
-        }
-    }
-}
-
-.total-projects-card {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.benefit-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(40, 167, 69, 0.1);
-}
-
-// CTA Section styles
-.cta-section {
-    background: linear-gradient(45deg, #1a463b, #2c5a4f);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.8;
-    }
-
-    .display-3 {
+.features {
+    .display-4 {
+        display: flex;
+        align-items: center;
         max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .lead {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
 }
 
-// Footer styles
-.footer {
-    background: #111827;
-    
-    .navbar-brand {
-        img {
-            filter: brightness(0) invert(1);
+// Services section styles with column layout
+@media (min-width: 768px) {
+    .flex-md-column {
+        .col-md-4 {
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
+}
+
+// Features section styles
+.text-primary {
+  color: #6366f1 !important;
+}
+
+.bg-primary {
+  background-color: #6366f1 !important;
+}
+
+.bg-opacity-10 {
+  --bs-bg-opacity: 0.1;
+}
+
+.feature-card {
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.max-w-768 {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-w-1280 {
+    max-width: 1280px;
+  }
+
+.title-2 {
+    color: var(--text-primary, #09090B);
+
+    /* Typography/Headings/Desktop/600/H2 */
+    font-family: var(--Font-Family-heading, Inter);
+    font-size: var(--Font-Size-headings-h2-desktop, 56px);
+    font-style: normal;
+    font-weight: var(--Font-Weight-600, 600);
+    line-height: var(--Line-Height-Headings-h2-desktop, 64px);
+    letter-spacing: var(--Letter-Spacing-Negative-n-100, -1px);
+}
+
+.badge {
+    min-height: 32px;;
+    border-radius: var(--Rounded-rounded-pill, 100px);
+    border: 1px solid var(--Indigo-300, #A5B4FC);
+    background: var(--Indigo-100, #E0E7FF);
+    color: #4F46E5;
+
+    /* Typography/Body/500/CAPS/S */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px; /* 116.667% */
+    text-transform: uppercase;
 }

@@ -48,6 +48,11 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+        include: path.resolve(__dirname, 'src/assets/icons')
       }
     ]
   }
