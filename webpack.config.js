@@ -4,6 +4,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -13,13 +14,29 @@ module.exports = {
     path: path.resolve(__dirname, 'src/dist')
   },
   devServer: {
-    static: path.resolve(__dirname, 'src/dist'),
+    static: [
+      {
+        directory: path.resolve(__dirname, 'src/dist'),
+      },
+      {
+        directory: path.resolve(__dirname, 'src/assets'),
+        publicPath: '/assets'
+      }
+    ],
     port: 3000,
     hot: true
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new MiniCssExtractPlugin({ filename: 'styles.css' })
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets',
+          to: 'assets'
+        }
+      ]
+    })
   ],
   module: {
     rules: [
