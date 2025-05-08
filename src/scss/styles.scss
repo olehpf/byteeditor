@@ -93,3 +93,9 @@ body {
     line-height: 14px; /* 116.667% */
     text-transform: uppercase;
 }
+
+img.logo {
+    max-height: 40px;
+    object-fit: contain;
+    opacity: 0.5;
+}
