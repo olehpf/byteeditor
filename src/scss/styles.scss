@@ -62,6 +62,12 @@ body {
     margin-right: auto;
 }
 
+.max-w-800 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .max-w-1280 {
     max-width: 1280px;
   }
@@ -98,4 +104,37 @@ img.logo {
     max-height: 40px;
     object-fit: contain;
     opacity: 0.5;
+}
+
+.cta-section {
+    .cta-block {
+      background: #6366f1;
+      border-radius: 24px;
+    }
+}
+
+.btn-md-text {
+    font-size: 16px;
+
+}
+
+.opacity-80 {
+    opacity: 0.8;
+}
+
+.bg-indigo-dark {
+    background-color: #312E81;
+    color: #C7D2FE;
+
+}
+
+.border-indigo-dark {
+    border-color: #818CF8;
+}
+
+@media (min-width: 576px) {
+    .px-sm-25 {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
 }
