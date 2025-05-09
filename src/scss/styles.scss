@@ -191,12 +191,12 @@ img.logo {
 }
 
 .pricing-features {
-    border-top: 1px solid rgba(49, 46, 129, 0.12); 
+    border-top: 1px solid rgba(49, 46, 129, 0.12);
     padding-top: 2rem;
     margin-top: 2rem;
 
     &-dark {
-        border-top: 1px solid rgba(255, 255, 255, 0.12); 
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
         padding-top: 2rem;
         margin-top: 2rem;
     }
@@ -214,4 +214,63 @@ img.logo {
 
 .check-circle svg {
     display: block;
+}
+
+.faq-figure {
+    position: relative;
+    margin-bottom: 0;
+
+    img {
+        border-radius: 1rem 1rem 0 0;
+        width: 100%;
+        display: block;
+    }
+
+    .faq-caption {
+        font-size: 1rem;
+        border-radius: 0 0 1rem 1rem;
+    }
+}
+
+.faq-caption-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 16px;
+    font-size: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    z-index: 2;
+}
+
+.fs-7 {
+    font-size: 12px !important;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: #18181B !important;
+}
+
+.accordion-button:focus {
+    border-color: #6366f1 !important; // Indigo border
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important; // Indigo shadow
+    outline: none !important;
+}
+
+.accordion-button::after {
+    display: none !important;
+}
+
+.accordion-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-left: auto;
 }
