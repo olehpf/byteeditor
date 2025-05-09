@@ -313,3 +313,16 @@ textarea {
 .text-indigo {
     color: #6366f1 !important;
 }
+
+.form-control:focus,
+.form-control:hover,
+textarea.form-control:focus,
+textarea.form-control:hover {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.40) !important;
+    outline: none !important;
+}
+
+.form-control {
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
