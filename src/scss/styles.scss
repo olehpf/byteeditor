@@ -2,11 +2,10 @@
 @use "bootstrap/scss/bootstrap" as *;
 
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 // Custom variables
-$font-family-base: 'Inter', sans-serif;
-
+$font-family-base: "Inter", sans-serif;
 
 // Custom styles
 body {
@@ -40,15 +39,15 @@ body {
 
 // Features section styles
 .text-primary {
-  color: #6366f1 !important;
+    color: #6366f1 !important;
 }
 
 .bg-primary {
-  background-color: #6366f1 !important;
+    background-color: #6366f1 !important;
 }
 
 .bg-opacity-10 {
-  --bs-bg-opacity: 0.1;
+    --bs-bg-opacity: 0.1;
 }
 
 .feature-card {
@@ -70,10 +69,10 @@ body {
 
 .max-w-1280 {
     max-width: 1280px;
-  }
+}
 
 .title-2 {
-    color: var(--text-primary, #09090B);
+    color: var(--text-primary, #09090b);
 
     /* Typography/Headings/Desktop/600/H2 */
     font-family: var(--Font-Family-heading, Inter);
@@ -85,18 +84,19 @@ body {
 }
 
 .badge {
-    min-height: 32px;;
+    min-height: 32px;
     border-radius: var(--Rounded-rounded-pill, 100px);
-    border: 1px solid var(--Indigo-300, #A5B4FC);
-    background: var(--Indigo-100, #E0E7FF);
-    color: #4F46E5;
+    border: 1px solid var(--Indigo-300, #a5b4fc);
+    background: var(--Indigo-100, #e0e7ff);
+    color: #4f46e5;
 
     /* Typography/Body/500/CAPS/S */
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 14px; /* 116.667% */
+    line-height: 14px;
+    /* 116.667% */
     text-transform: uppercase;
 }
 
@@ -108,14 +108,13 @@ img.logo {
 
 .cta-section {
     .cta-block {
-      background: #6366f1;
-      border-radius: 24px;
+        background: #6366f1;
+        border-radius: 24px;
     }
 }
 
 .btn-md-text {
     font-size: 16px;
-
 }
 
 .opacity-80 {
@@ -123,18 +122,96 @@ img.logo {
 }
 
 .bg-indigo-dark {
-    background-color: #312E81;
-    color: #C7D2FE;
-
+    background-color: #312e81;
+    color: #c7d2fe;
 }
 
 .border-indigo-dark {
-    border-color: #818CF8;
+    border-color: #818cf8;
 }
 
 @media (min-width: 576px) {
     .px-sm-25 {
-      padding-left: 12px !important;
-      padding-right: 12px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
     }
+}
+
+.pb-45 {
+    padding-bottom: 2rem !important; // 1.125rem = 18px
+}
+
+.py-25 {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+}
+
+.btn-primary {
+    background-color: #6366f1 !important;
+    border-color: #6366f1 !important;
+    color: #fff !important;
+
+    &:hover,
+    &:focus {
+        background-color: #4f46e5 !important;
+        border-color: #4f46e5 !important;
+        color: #fff !important;
+    }
+}
+
+.btn-outline-primary {
+    color: #6366f1 !important;
+    border-color: #6366f1 !important;
+    background-color: transparent !important;
+
+    &:hover,
+    &:focus {
+        background-color: #6366f1 !important;
+        color: #fff !important;
+        border-color: #6366f1 !important;
+    }
+}
+
+.pricing-card {
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+
+    // Світла картка
+    &.bg-white:hover,
+    &.bg-white:focus {
+        border-color: #6366f1 !important;
+        box-shadow: 0 4px 24px 0 rgba(99, 102, 241, 0.08);
+    }
+
+    // Темна картка
+    &.bg-dark:hover,
+    &.bg-dark:focus {
+        background-color: #18181B !important;
+        box-shadow: 0 4px 24px 0 rgba(49, 46, 129, 0.12);
+    }
+}
+
+.pricing-features {
+    border-top: 1px solid rgba(49, 46, 129, 0.12); 
+    padding-top: 2rem;
+    margin-top: 2rem;
+
+    &-dark {
+        border-top: 1px solid rgba(255, 255, 255, 0.12); 
+        padding-top: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.check-circle {
+    width: 20px;
+    height: 20px;
+    background: #6366f1;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-circle svg {
+    display: block;
 }
