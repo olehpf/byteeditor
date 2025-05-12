@@ -1,6 +1,7 @@
 // Import our custom CSS
 import '../scss/styles.scss';
 import './faq-icons';
+import './scroll-to-top';
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 

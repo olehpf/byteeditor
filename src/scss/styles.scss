@@ -55,6 +55,10 @@ body {
     padding: 32px;
 }
 
+.max-w-320 {
+    max-width: 320px;
+}
+
 .max-w-600 {
     max-width: 600px;
 }
@@ -246,6 +250,10 @@ img.logo {
     z-index: 2;
 }
 
+.fs-65 {
+    font-size: 14px !important;
+}
+
 .fs-7 {
     font-size: 12px !important;
 }
@@ -260,8 +268,8 @@ img.logo {
 }
 
 .accordion-button:focus {
-    border-color: #6366f1 !important; // Indigo border
-    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important; // Indigo shadow
+    border-color: none !important;
+    box-shadow: none !important; 
     outline: none !important;
 }
 
@@ -326,3 +334,38 @@ textarea.form-control:hover {
 .form-control {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+.footer-section a.text-decoration-none {
+  position: relative;
+  color: #E4E4E7;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-section a.text-decoration-none::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1);
+  border-radius: 1px;
+}
+
+.footer-section a.text-decoration-none:hover,
+.footer-section a.text-decoration-none:focus {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.footer-section a.text-decoration-none:hover::after,
+.footer-section a.text-decoration-none:focus::after {
+  width: 100%;
+}
+
+.mb-6 {
+  margin-bottom: 3.5rem !important;
+}
+
