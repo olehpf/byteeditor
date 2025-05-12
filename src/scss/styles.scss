@@ -88,19 +88,9 @@ body {
 }
 
 .badge {
-    min-height: 32px;
-    border-radius: var(--Rounded-rounded-pill, 100px);
-    border: 1px solid var(--Indigo-300, #a5b4fc);
-    background: var(--Indigo-100, #e0e7ff);
+    border: 1px solid #a5b4fc;
+    background: #e0e7ff;
     color: #4f46e5;
-
-    /* Typography/Body/500/CAPS/S */
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 14px;
-    /* 116.667% */
     text-transform: uppercase;
 }
 
@@ -173,6 +163,34 @@ img.logo {
         background-color: #6366f1 !important;
         color: #fff !important;
         border-color: #6366f1 !important;
+    }
+}
+
+.banner-link {
+    position: relative;
+    transition: color 0.2s;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        width: 0;
+        height: 1px;
+        background: #fff;
+        transition: width 0.25s cubic-bezier(.4,0,.2,1);
+        border-radius: 1px;
+    }
+    
+    &:hover,
+    &:focus {
+        color: #fff !important;
+        opacity: 1 !important;
+    }
+    
+    &:hover::after,
+    &:focus::after {
+        width: 100%;
     }
 }
 
@@ -287,7 +305,6 @@ img.logo {
     position: relative;
     aspect-ratio: 4/3 !important;
     overflow: hidden !important;
-    border-radius: 1rem; // або твій клас rounded-4
   
     img {
       width: 100% !important;
@@ -384,7 +401,7 @@ textarea.form-control:hover {
   width: 0;
   height: 1px;
   background: #fff;
-  transition: width 0.3s cubic-bezier(.4,0,.2,1);
+  transition: width 0.25s cubic-bezier(.4,0,.2,1);
   border-radius: 1px;
 }
 
@@ -407,3 +424,7 @@ textarea.form-control:hover {
   aspect-ratio: 4/3 !important;
 }
 
+.banner-text {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
