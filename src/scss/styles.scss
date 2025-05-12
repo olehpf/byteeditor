@@ -283,6 +283,40 @@ img.logo {
     margin-left: auto;
 }
 
+.img-box-4-3 {
+    position: relative;
+    aspect-ratio: 4/3 !important;
+    overflow: hidden !important;
+    border-radius: 1rem; // або твій клас rounded-4
+  
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      aspect-ratio: 4/3 !important;
+      display: block !important;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute !important;
+      inset: 0 !important;
+      pointer-events: none !important;
+      border-radius: inherit !important;
+      z-index: 2 !important;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(99, 102, 241, 0.10) 75%) !important;
+    }
+  }
+
+.image-mask-overlay {
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(99, 102, 241, 0.10) 75%);
+    z-index: 2;
+  }
+  .faq-figure {
+    overflow: hidden;
+  }
+
 input,
 textarea {
     color: #18181b !important;
