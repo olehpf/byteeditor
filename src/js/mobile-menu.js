@@ -15,6 +15,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Select login and contact buttons by their IDs
   const loginButton = document.getElementById("login-button");
   const contactButton = document.getElementById("contact-button");
+  // Select menu and close icons
+  const menuIcon = document.querySelector(".menu-icon");
+  const closeIcon = document.querySelector(".close-icon");
+
+  // Toggle menu/close icons when navbar is opened/closed
+  navbarCollapse.addEventListener('show.bs.collapse', function () {
+    menuIcon.classList.add('d-none');
+    closeIcon.classList.remove('d-none');
+  });
+
+  navbarCollapse.addEventListener('hide.bs.collapse', function () {
+    menuIcon.classList.remove('d-none');
+    closeIcon.classList.add('d-none');
+  });
 
   // Add an event listener to the document for clicks
   document.addEventListener("click", function (event) {
