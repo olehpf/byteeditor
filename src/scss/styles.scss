@@ -16,6 +16,136 @@ body {
     max-width: 1600px;
 }
 
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    border-radius: 100px;
+}
+
+.nav-link {
+    white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+    
+    .navbar-nav {
+        gap: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-collapse {
+        display: flex;
+        align-items: center;
+    }
+    
+    .button-group {
+        margin-left: 0.75rem;
+    }
+
+    .dropdown-menu {
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        border-radius: 12px;
+    }
+    
+    .dropdown-item {
+        border-radius: 8px;
+        margin: 0 0.5rem;
+        width: calc(100% - 1rem);
+    }
+}
+
+.container-fluid {
+    min-height: 60px;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+}
+
+// Navbar responsive styles
+@media (max-width: 991.98px) {
+    .navbar .container-fluid {
+        border-radius: 100px !important;
+        box-shadow: 0 2px 8px 0 rgba(33, 37, 41, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .navbar .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        z-index: 1000;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px 0 rgba(33, 37, 41, 0.16);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    
+    .navbar-brand {
+        margin-right: 0;
+    }
+    
+    .navbar-nav {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+    
+    .nav-item:last-child {
+        margin: 0 auto;
+        width: -webkit-fill-available;
+    }
+
+    .nav-link {
+        font-size: 1.25rem !important;
+        // padding: 0.5rem 1rem !important;
+    }
+    
+    .dropdown-toggle::after {
+        display: none;
+    }
+    
+    .navbar .button-group {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .nav-item.dropdown .nav-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-item:hover {
+        background-color: transparent;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+    }
+}
+
 .features {
     .display-4 {
         display: flex;
@@ -133,6 +263,11 @@ img.logo {
 
 .pb-45 {
     padding-bottom: 2rem !important; // 1.125rem = 18px
+}
+
+.py-15 {
+    padding-top: 0.375rem !important;
+    padding-bottom: 0.375rem !important;
 }
 
 .py-25 {
@@ -427,4 +562,61 @@ textarea.form-control:hover {
 .banner-text {
   font-size: 14px !important;
   line-height: 1.5 !important;
+}
+
+.navbar .dropdown-item {
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.2s, background-color 0.2s;
+    color: #E4E4E7 !important;
+    
+    &:hover, &:focus {
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #fff !important;
+        border-radius: 100px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .dropdown-menu.show {
+        display: block !important;
+        padding: 1rem;
+        opacity: 1 !important;
+        margin: 0 auto;
+        transform: translateX(-50%) translateY(-132%) !important;
+    }
+    
+    .dropdown-item {
+        text-align: center;
+        padding: 0.375rem 1rem;
+    }
+
+    .nav-item.dropdown {
+        position: relative !important;
+        z-index: 1050 !important;
+    }
+    
+    .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 50% !important;
+        width: 200px;
+        margin-top: 0.5rem !important;
+        float: none;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.16);
+        z-index: 9999 !important;
+    }
+    
+    // Fix dropdown arrow placement
+    .dropdown-toggle svg {
+        position: relative;
+        top: 1px;
+    }
+    
+    // Ensure the dropdown link doesn't shift
+    .nav-item.dropdown .nav-link {
+        min-width: 95px; 
+        justify-content: center;
+    }
 }

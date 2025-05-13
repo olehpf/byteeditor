@@ -50,7 +50,9 @@ module.exports = {
             options: {
               postcssOptions: {
                 plugins: [
-                  autoprefixer
+                  autoprefixer({
+                    overrideBrowserslist: ['last 2 versions', '> 1%', 'not ie <= 8']
+                  })
                 ]
               }
             }
