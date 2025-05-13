@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarToggler = document.querySelector(".navbar-toggler");
   // Select all nav links within the navbar collapse
   const navLinks = document.querySelectorAll(".navbar-collapse .nav-link");
+  // Select login and contact buttons by their IDs
+  const loginButton = document.getElementById("login-button");
+  const contactButton = document.getElementById("contact-button");
 
   // Add an event listener to the document for clicks
   document.addEventListener("click", function (event) {
@@ -27,14 +30,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Add an event listener to each nav link
+  // Add an event listener to each nav link, excluding dropdown toggles
   navLinks.forEach(function (link) {
     // When a nav link is clicked, execute the following code:
-    link.addEventListener("click", function () {
+    link.addEventListener("click", function (event) {
+      // Skip if this is a dropdown toggle button
+      if (link.getAttribute('data-bs-toggle') === 'dropdown') {
+        return;
+      }
+      
       // Get the Bootstrap collapse instance for the navbar
       const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
       // If the collapse instance exists, hide it
       if (bsCollapse) bsCollapse.hide();
     });
   });
+
+  // Add event listeners for dropdown items
+  const dropdownItems = document.querySelectorAll('.dropdown-item');
+  dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      // Get the Bootstrap collapse instance for the navbar
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+      // If the collapse instance exists, hide it
+      if (bsCollapse) bsCollapse.hide();
+    });
+  });
+
+  // Add event listeners to the login and contact buttons
+  if (loginButton) {
+    loginButton.addEventListener("click", function () {
+      if (navbarCollapse.classList.contains("show")) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+      }
+    });
+  }
+
+  if (contactButton) {
+    contactButton.addEventListener("click", function () {
+      if (navbarCollapse.classList.contains("show")) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+      }
+    });
+  }
 });

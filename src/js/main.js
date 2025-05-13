@@ -1,5 +1,7 @@
 // Import our custom CSS
 import '../scss/styles.scss';
+
+// Import all of Bootstrap's JS
 import './faq-icons';
 import './scroll-to-top';
 import './mobile-menu';
