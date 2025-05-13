@@ -2,6 +2,8 @@
 import '../scss/styles.scss';
 import './faq-icons';
 import './scroll-to-top';
+import './mobile-menu';
+
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
 
