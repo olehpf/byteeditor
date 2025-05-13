@@ -619,3 +619,98 @@ textarea.form-control:hover {
         justify-content: center;
     }
 }
+
+// Testimonials Section Styles
+.testimonials-section {
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+    border: 1px solid rgba(228, 228, 231, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-height: 336px; // Default height for mobile
+    background-color: #ffffff;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+    }
+    
+    &.bg-primary-subtle {
+      border-color: rgba(99, 102, 241, 0.3);
+      
+      .testimonial-text {
+        color: #3730a3;
+      }
+    }
+  }
+  
+  .testimonial-quote {
+    color: #6366f1;
+    height: 40px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .testimonial-text {
+    line-height: 1.6;
+    color: #27272a;
+  }
+  
+  .pagination-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(99, 102, 241, 0.2);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease;
+      
+      &.active {
+        background-color: #6366f1;
+        transform: scale(1.2);
+        width: 24px;
+        border-radius: 6px;
+      }
+      
+      &:hover:not(.active) {
+        background-color: rgba(99, 102, 241, 0.4);
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  // Animation for testimonial cards
+  .col-12 {
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+    
+    &.active-testimonial {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Media query for medium and large screens
+@media (min-width: 992px) {
+  .testimonials-section {
+    .testimonial-card {
+      min-height: 336px;
+    }
+  }
+}
+
+// Media query for small screens (match JS breakpoint)
+@media (max-width: 991.98px) {
+  .testimonials-section {
+    .testimonial-card {
+      min-height: 272px;
+    }
+  }
+}

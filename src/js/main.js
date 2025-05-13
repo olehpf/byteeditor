@@ -5,6 +5,7 @@ import '../scss/styles.scss';
 import './faq-icons';
 import './scroll-to-top';
 import './mobile-menu';
+import './testimonials';
 
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
@@ -16,4 +17,5 @@ const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-tog
 const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new Tooltip(tooltipTriggerEl);
 });
+
 
