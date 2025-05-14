@@ -23,11 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
   navbarCollapse.addEventListener('show.bs.collapse', function () {
     menuIcon.classList.add('d-none');
     closeIcon.classList.remove('d-none');
+    // Add bg-dark class to navbar container when menu is opened
+    document.querySelector('.navbar-collapse').classList.add('bg-dark');
   });
 
   navbarCollapse.addEventListener('hide.bs.collapse', function () {
     menuIcon.classList.remove('d-none');
     closeIcon.classList.add('d-none');
+    // Only remove bg-dark class if we're at the top of the page
+    if (window.scrollY === 0) {
+      document.querySelector('.navbar-collapse').classList.remove('bg-dark');
+    }
   });
 
   // Add an event listener to the document for clicks

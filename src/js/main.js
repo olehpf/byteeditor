@@ -6,6 +6,7 @@ import './faq-icons';
 import './scroll-to-top';
 import './mobile-menu';
 import './testimonials';
+import './header-scroll';
 
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap';
