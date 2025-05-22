@@ -1,4 +1,7 @@
-// Import all of Bootstrap's CSS
+// Import sass:map module
+@use "sass:map";
+
+// Import Bootstrap first
 @use "bootstrap/scss/bootstrap" as *;
 
 // Import Google Fonts
@@ -6,10 +9,29 @@
 
 // Custom variables
 $font-family-base: "Inter", sans-serif;
+$font-size-base: 1rem; // 16px by default
+$font-weight-base: 400;
+$line-height-base: 1.5;
+$font-size-lg: $font-size-base * 1.25;
+$font-size-sm: $font-size-base * .875;
+$font-size-xs: $font-size-base * .75;
+
+// Override Bootstrap's font sizes with responsive values
+$font-sizes: (
+  1: clamp(3rem, 5vw, 3.5rem),        // 48px - 56px
+  2: clamp(2.5rem, 4vw, 3rem),        // 40px - 48px
+  3: clamp(2rem, 3.5vw, 2.5rem),      // 32px - 40px
+  4: clamp(1.5rem, 3vw, 2rem),        // 24px - 32px
+  5: clamp(1.25rem, 2.5vw, 1.5rem),   // 20px - 24px
+  6: clamp(1rem, 2vw, 1.25rem)        // 16px - 20px
+);
 
 // Custom styles
 body {
     font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
 }
 
 .wrapper {
@@ -193,6 +215,14 @@ body {
     max-width: 600px;
 }
 
+.max-w-640 {
+    max-width: 640px;
+}
+
+.max-w-712 {
+    max-width: 712px;
+}
+
 .max-w-768 {
     max-width: 768px;
 }
@@ -205,13 +235,58 @@ body {
     max-width: 1280px;
 }
 
-.title-2 {
-    color: #09090b;
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 64px;
-    letter-spacing: -1px;
+.fs-1 {
+    font-size: map.get($font-sizes, 1) !important;
+    font-style: normal !important;
+    line-height: 1.14 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-2 {
+    font-size: map.get($font-sizes, 2) !important;
+    font-style: normal !important;
+    line-height: 1.17 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-3 {
+    font-size: map.get($font-sizes, 3) !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-4 {
+    font-size: map.get($font-sizes, 4) !important;
+    font-style: normal !important;
+    line-height: 1.25 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-5 {
+    font-size: map.get($font-sizes, 5) !important;
+    font-style: normal !important;
+    line-height: 1.33 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-6 {
+    font-size: map.get($font-sizes, 6) !important;
+    font-style: normal !important;
+    line-height: 1.4 !important;
+    letter-spacing: -1px !important;
+}
+
+.fs-lg {
+    font-size: $font-size-lg !important;
+}
+
+.fs-sm {
+    font-size: $font-size-sm !important;
+}
+
+.fs-xs {
+    font-size: $font-size-xs !important;
 }
 
 .badge {
