@@ -260,21 +260,21 @@ body {
     font-size: map.get($font-sizes, 4) !important;
     font-style: normal !important;
     line-height: 1.25 !important;
-    letter-spacing: -1px !important;
+    letter-spacing: -0.5px !important;
 }
 
 .fs-5 {
     font-size: map.get($font-sizes, 5) !important;
     font-style: normal !important;
     line-height: 1.33 !important;
-    letter-spacing: -1px !important;
+    letter-spacing: -0.25px !important;
 }
 
 .fs-6 {
     font-size: map.get($font-sizes, 6) !important;
     font-style: normal !important;
     line-height: 1.4 !important;
-    letter-spacing: -1px !important;
+    letter-spacing: -0.25px !important;
 }
 
 .fs-lg {
